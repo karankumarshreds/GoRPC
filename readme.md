@@ -1,9 +1,9 @@
 ## What is RPC?
 
-RPC (Remote Procedure Call) is an inter-process communication that exchanges information between various distrubuted systems (servers).
-It is a protocol that one program can use to request a service from a program located on some other node/server/computer/system on the network without having to udnerstand the network's details.
+RPC (Remote Procedure Call) is an inter-process communication that exchanges information between various distributed systems (servers).
+It is a protocol that one program can use to request a service from a program located on some other node/server/computer/system on the network without having to understand the network's details.
 
-In simple workds, a computer `A` can **call** a function(**procedures**) in another computer `B` **remotely**. Hence, _Remote Procedure Call_.
+In simple words, a computer `A` can **call** a function(**procedures**) in another computer `B` **remotely**. Hence, _Remote Procedure Call_.
 
 The basic steps for the entire process are as:
 
@@ -64,7 +64,7 @@ func main() {
 	// Registers an HTTP handler for RPC messages
 	rpc.HandleHTTP()
 	// Start listening for the requests on port 1234
-	listener, err := net.Listen("tcp", ":1234")
+	listener, err := net.Listen("tcp", "0.0.0.0:1234")
 	if err !=nil {
 		log.Fatal("Listener error: ", err)
 	}
@@ -102,7 +102,7 @@ func main() {
 	args := Args{}
 
 	// DialHTTP connects to an HTTP RPC server at the specified network
-	client, err := rpc.DialHTTP("tcp", "localhost"+":1234")
+	client, err := rpc.DialHTTP("tcp", "0.0.0.0:1234")
 	if err != nil {
 		log.Fatal("Client connection error: ", err)
 	}

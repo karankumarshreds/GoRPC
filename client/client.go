@@ -14,7 +14,7 @@ func main() {
 	args := Args{}
 	
 	// DialHTTP connects to an HTTP RPC server at the specified network
-	client, err := rpc.DialHTTP("tcp", "localhost"+":1234")
+	client, err := rpc.DialHTTP("tcp", "0.0.0.0:1234")
 	if err != nil {
 		log.Fatal("Client connection error: ", err)
 	}
