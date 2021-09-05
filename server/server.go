@@ -20,7 +20,7 @@ func main() {
 	// Registers an HTTP handler for RPC messages
 	rpc.HandleHTTP() // ?
 	// Start listening for the requests on port 1234
-	listener, err := net.Listen("tcp", ":1234")
+	listener, err := net.Listen("tcp", "0.0.0.0:1234")
 	if err !=nil {
 		log.Fatal("Listener error: ", err)
 	}
